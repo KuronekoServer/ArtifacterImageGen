@@ -200,6 +200,7 @@ class CynoGenerator:
             FriendShip = None
         else:
             FriendShip : int = character.friendship_level
+            
         #CharacterStatus : CharacterStats = character.stats
         CharacterStatus : dict = {
             "HP": round(character.stats.FIGHT_PROP_MAX_HP.value),
@@ -260,7 +261,9 @@ class CynoGenerator:
         
         config_font = lambda size : ImageFont.truetype(f'{self.cwd}/Assets/ja-jp.ttf',size)
         
-        Base = Image.open(f'{self.cwd}/Base/{element}.png')
+        Base = Image.open(f'{self.cwd}/Base/{element}.png').convert("RGBA")
+        BaseDraw = ImageDraw.Draw(Base)
+        BaseDraw.text((1559, 597), "Modified", font=ImageFont.truetype(f'{self.cwd}/Assets/modified.ttf', 14))
         
         if (character.id == 10000005) or (character.id == 10000007):
             if not os.path.exists(self.cwd+"/cache/"+character.image.banner.filename+".png"):
