@@ -18,7 +18,7 @@ async def main():
   [![Twitter](https://img.shields.io/badge/開発-%40__0kq__-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/_0kq_)
   [![Twitter](https://img.shields.io/badge/運営・変更-%40kuroneko_server-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/kuroneko_server)
   ##### 原神のUIDからビルドカードを生成できます  
-  ※バグ報告はDiscordからお願いします
+  ※バグ報告は[Discord](https://discord.com/invite/Y6w5Jv3EAR)からお願いします
   """
   st.write(content,unsafe_allow_html=True)
   UID = st.text_input("UIDを入力")
