@@ -23,5 +23,5 @@ pip install streamlit
 ```
 起動
 ```
-streamilt run streamlit_app.py
+streamlit run streamlit_app.py
 ```
