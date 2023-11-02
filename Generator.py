@@ -277,7 +277,7 @@ class CynoGenerator:
         
         CharacterAvatarMask = CharacterImage.copy()
         
-        if CharacterName == 'アルハイゼン':
+        if CharacterName in ['アルハイゼン','ヌヴィレット']:
             CharacterAvatarMask2 = Image.open(f'{self.cwd}/Assets/Alhaitham.png').convert('L').resize(CharacterImage.size)
         else:
             CharacterAvatarMask2 = Image.open(f'{self.cwd}/Assets/CharacterMask.png').convert('L').resize(CharacterImage.size)

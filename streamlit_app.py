@@ -3,33 +3,65 @@ import asyncio
 from Generator import CynoGenerator
 from enkanetwork.exception import *
 import logging
+import asyncio
 
 logger = logging.getLogger()
 
-async def main():
+@st.cache_resource
+async def on_start():
   gen_client = CynoGenerator(cwd=".")
   try:
     await gen_client.client.update_assets()
   except:
     pass
+
+
+async def main():
+  gen_client = CynoGenerator(cwd=".")
   if "player_info" not in st.session_state:
     st.session_state.player_info = False
+  params = st.experimental_get_query_params()
+  if params.get("uid"):
+    queryUID = params["uid"][0]
+  else:
+    queryUID = None
 
   st.set_page_config(
-    page_title="Artifacter Modified on Web",
-    page_icon="Assets/kuroneko-logo.webp",
-    layout="wide"
+    page_title="CYNO-Builder on Web",
+    page_icon="Assets/cyno.png",
+    layout="wide",
+    initial_sidebar_state="collapsed"
   )
+  st.markdown(
+    """
+<style>
+    [data-testid="collapsedControl"] {
+        display: none
+    }
+</style>
+""",
+    unsafe_allow_html=True,
+    )
+  try:
+    await on_start()
+  except:
+    pass
   content = """
   # Web版 Artifacter Modified
   [![Twitter](https://img.shields.io/badge/Artifacter-%40ArtifacterBot-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/ArtifacterBot)
   [![Twitter](https://img.shields.io/badge/開発-%40__0kq__-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/_0kq_)
   [![Twitter](https://img.shields.io/badge/運営・変更-%40kuroneko_server-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/kuroneko_server)
+  [![Discord](https://img.shields.io/discord/867038364552396860?logo=Discord&label=Discord&style=flat-square)](https://discord.com/invite/Y6w5Jv3EAR)
+  [![Donation](https://img.shields.io/badge/%E9%81%8B%E5%96%B6%E6%94%AF%E6%8F%B4-Donation-green?style=flat-square)](https://kuroneko6423.com/donation)
+  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fartifacter-builder.kuroneko6423.com&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E6%95%B0&edge_flat=false)](https://hits.seeyoufarm.com)
   ##### 原神のUIDからビルドカードを生成できます  
   ※バグ報告は[Discord](https://discord.com/invite/Y6w5Jv3EAR)からお願いします
   """
   st.write(content,unsafe_allow_html=True)
-  UID = st.text_input("UIDを入力")
+  UID = st.text_input("UIDを入力",value=queryUID if queryUID else "")
+  queryUID = None
+  if UID:
+    st.experimental_set_query_params(uid=UID)
   if st.button("プレイヤー情報の取得", key="get_player_info",on_click=session_player) or st.session_state.player_info:
       placeholder = st.empty()
       placeholder.write("プレイヤー情報を取得中...")
@@ -92,7 +124,7 @@ async def main():
         if st.button("ビルドカードを生成"):
           placeholder = st.empty()
           placeholder.write("ビルドカードを生成中...")
-          Image = gen_client.generation(characters[character],score_types[score_type])
+          Image = gen_client.generation(characters[character],score_types[score_type],None)
           placeholder.image(Image)
           st.write("画像を長押し / 右クリックで保存できます。")
       else:
