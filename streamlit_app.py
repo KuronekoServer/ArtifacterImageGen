@@ -124,7 +124,7 @@ async def main():
         if st.button("ビルドカードを生成"):
           placeholder = st.empty()
           placeholder.write("ビルドカードを生成中...")
-          Image = gen_client.generation(characters[character],score_types[score_type],None)
+          Image = gen_client.generation(characters[character],score_types[score_type])
           placeholder.image(Image)
           st.write("画像を長押し / 右クリックで保存できます。")
       else:
