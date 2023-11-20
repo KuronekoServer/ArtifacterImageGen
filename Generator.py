@@ -11,7 +11,7 @@ import base64
 from PIL import ImageFile 
 
 
-class CynoGenerator:
+class ArtifacterGenerator:
     def __init__(self,cwd = "./ArtifacterImageGen"):
         ImageFile.LOAD_TRUNCATED_IMAGES = True
         self.cwd = cwd

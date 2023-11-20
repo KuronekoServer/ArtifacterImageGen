@@ -27,8 +27,8 @@ async def main():
     queryUID = None
 
   st.set_page_config(
-    page_title="CYNO-Builder on Web",
-    page_icon="Assets/cyno.png",
+    page_title="Artifacter Modified on Web",
+    page_icon="Assets/kuroneko-logo.webp",
     layout="wide",
     initial_sidebar_state="collapsed"
   )
