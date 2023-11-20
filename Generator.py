@@ -261,19 +261,15 @@ class ArtifacterGenerator:
         
         config_font = lambda size : ImageFont.truetype(f'{self.cwd}/Assets/ja-jp.ttf',size)
         
-        if background_path:
-            if background_path.startswith("http") or background_path.startswith("https"):
-                background = BytesIO(requests.get(background_path).content)
-            else:
-                background = background_path
-            Base = Image.open(background).resize((1920,1080)).convert("RGBA")
-        else:
-            Base = Image.open(f'{self.cwd}/Base/{element}.png')
-
+        Base = Image.open(f'{self.cwd}/Base/{element}.png').convert("RGBA")
+        BaseDraw = ImageDraw.Draw(Base)
+        BaseDraw.text((1559, 597), "Modified", font=ImageFont.truetype(f'{self.cwd}/Assets/modified.ttf', 14))
+        
         if (character.id == 10000005) or (character.id == 10000007):
             if not os.path.exists(self.cwd+"/cache/"+character.image.banner.filename+".png"):
                 self.resize_image(self.get_image(character.image.banner.filename,character.image.banner.url))
         CharacterImage = Image.open(self.get_image(character.image.banner.filename,character.image.banner.url)).convert("RGBA")                
+        
         
         Shadow = Image.open(f'{self.cwd}/Assets/Shadow.png').resize(Base.size)
         CharacterImage = CharacterImage.crop((289,0,1728,1024))
