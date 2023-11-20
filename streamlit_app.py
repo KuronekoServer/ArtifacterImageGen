@@ -1,6 +1,6 @@
 import streamlit as st
 import asyncio
-from Generator import CynoGenerator
+from Generator import ArtifacterGenerator
 from enkanetwork.exception import *
 import logging
 import asyncio
@@ -9,7 +9,7 @@ logger = logging.getLogger()
 
 @st.cache_resource
 async def on_start():
-  gen_client = CynoGenerator(cwd=".")
+  gen_client = ArtifacterGenerator(cwd=".")
   try:
     await gen_client.client.update_assets()
   except:
@@ -17,7 +17,7 @@ async def on_start():
 
 
 async def main():
-  gen_client = CynoGenerator(cwd=".")
+  gen_client = ArtifacterGenerator(cwd=".")
   if "player_info" not in st.session_state:
     st.session_state.player_info = False
   params = st.experimental_get_query_params()
