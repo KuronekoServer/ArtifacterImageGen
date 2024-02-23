@@ -6,8 +6,7 @@ COPY requirements.txt .
 
 RUN apt-get update && \
     apt-get -y upgrade && \
-    pip install -r requirements.txt && \
-    pip install streamlit
+    pip install -r requirements.txt
 
 #ポート
 EXPOSE 8501
