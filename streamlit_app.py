@@ -7,20 +7,13 @@ import asyncio
 
 logger = logging.getLogger()
 
-@st.cache_resource
-async def on_start():
-  gen_client = ArtifacterGenerator(cwd=".")
-  try:
-    await gen_client.client.update_assets()
-  except:
-    pass
 
 
 async def main():
   gen_client = ArtifacterGenerator(cwd=".")
   if "player_info" not in st.session_state:
     st.session_state.player_info = False
-  params = st.query_params()
+  params = st.experimental_get_query_params()
   if params.get("uid"):
     queryUID = params["uid"][0]
   else:
@@ -124,7 +117,7 @@ async def main():
         if st.button("ビルドカードを生成"):
           placeholder = st.empty()
           placeholder.write("ビルドカードを生成中...")
-          Image = gen_client.generation(characters[character],score_types[score_type])
+          Image = gen_client.generation(characters[character],score_types[score_type],None)
           placeholder.image(Image)
           st.write("画像を長押し / 右クリックで保存できます。")
       else:
