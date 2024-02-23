@@ -7,6 +7,13 @@ import asyncio
 
 logger = logging.getLogger()
 
+@st.cache_resource
+async def on_start():
+  gen_client = ArtifacterGenerator(cwd=".")
+  try:
+    await gen_client.client.update_assets()
+  except:
+    pass
 
 
 async def main():
@@ -117,7 +124,7 @@ async def main():
         if st.button("ビルドカードを生成"):
           placeholder = st.empty()
           placeholder.write("ビルドカードを生成中...")
-          Image = gen_client.generation(characters[character],score_types[score_type],None)
+          Image = gen_client.generation(characters[character],score_types[score_type])
           placeholder.image(Image)
           st.write("画像を長押し / 右クリックで保存できます。")
       else:
