@@ -27,7 +27,7 @@ async def main():
     queryUID = None
 
   st.set_page_config(
-    page_title="Artifacter Modified on Web",
+    page_title="Artifacter on Web",
     page_icon="Assets/kuroneko-logo.webp",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -47,7 +47,7 @@ async def main():
   except:
     pass
   content = """
-  # Web版 Artifacter Modified
+  # Web版 Artifacter
   [![Twitter](https://img.shields.io/badge/Artifacter-%40ArtifacterBot-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/ArtifacterBot)
   [![Twitter](https://img.shields.io/badge/開発-%40__0kq__-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/_0kq_)
   [![Twitter](https://img.shields.io/badge/運営・変更-%40kuroneko_server-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/kuroneko_server)
