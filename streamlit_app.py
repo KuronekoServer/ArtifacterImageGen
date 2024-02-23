@@ -20,7 +20,7 @@ async def main():
   gen_client = ArtifacterGenerator(cwd=".")
   if "player_info" not in st.session_state:
     st.session_state.player_info = False
-  params = st.experimental_get_query_params()
+  params = st.query_params()
   if params.get("uid"):
     queryUID = params["uid"][0]
   else:
