@@ -1,4 +1,4 @@
-# web版Artifacter Modified
+# web版Artifacter
 
 [![Twitter](https://img.shields.io/badge/Twitter-%40__0kq__-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/_0kq_)
 [![Twitter](https://img.shields.io/badge/Twitter-%40kuroneko_server-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/kuroneko_server)
