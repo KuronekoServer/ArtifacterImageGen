@@ -2,6 +2,8 @@ FROM python:3.10.13
 
 WORKDIR /app
 
+ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" /dev/null
+
 COPY requirements.txt .
 
 RUN apt-get update && \
