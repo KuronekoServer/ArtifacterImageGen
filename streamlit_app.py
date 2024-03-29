@@ -27,7 +27,7 @@ async def main():
     queryUID = None
 
   st.set_page_config(
-    page_title="Artifacter on Web",
+    page_title="【公式】Web版Artifacter",
     page_icon="Assets/kuroneko-logo.webp",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -70,7 +70,7 @@ async def main():
           player_data = await gen_client.client.fetch_user_by_uid(UID)
       except EnkaServerRateLimit:
         placeholder.empty()
-        st.write("レートリミットに達しました。")
+        st.write("レートリミットに達しました。しばらく時間が経過した後に再度実行を試みてください。")
         return
       except EnkaServerMaintanance:
         placeholder.empty()
