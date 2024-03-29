@@ -2,7 +2,8 @@ FROM python:3.10.13
 
 WORKDIR /app
 
-ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" /dev/null
+#キャッシュ無効化用
+#ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" /dev/null
 
 COPY requirements.txt .
 
