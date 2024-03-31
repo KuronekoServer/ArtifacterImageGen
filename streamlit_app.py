@@ -53,7 +53,8 @@ async def main():
   [![Twitter](https://img.shields.io/badge/運営・変更-%40kuroneko_server-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/kuroneko_server)
   [![Discord](https://img.shields.io/discord/867038364552396860?logo=Discord&label=Discord&style=flat-square)](https://discord.com/invite/Y6w5Jv3EAR)
   [![Donation](https://img.shields.io/badge/%E9%81%8B%E5%96%B6%E6%94%AF%E6%8F%B4-Donation-green?style=flat-square)](https://kuroneko6423.com/donation)
-  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fartifacter-builder.kuroneko6423.com&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E6%95%B0&edge_flat=true)](https://hits.seeyoufarm.com)
+  
+  <br>[moe-counter](https://moe-counter.glitch.me/get/@kuroneko6423-artifacter-web?theme=rule34)
   ##### 原神のUIDからビルドカードを生成できます  
   ※バグ報告は[Discord](https://discord.com/invite/Y6w5Jv3EAR)からお願いします
   """
