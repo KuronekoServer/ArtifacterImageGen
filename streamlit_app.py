@@ -57,7 +57,7 @@ async def main():
   <br>![moe-counter](https://moe-counter.glitch.me/get/@kuroneko6423-artifacter-web?theme=rule34)
   ##### 原神のUIDからビルドカードを生成できます  
   ※バグ報告は[Discord](https://discord.com/invite/Y6w5Jv3EAR)からお願いします
-  <br※このサービスはmiHoYo/HoYoverse非公式であり、miHoYo / HoYoverseとは一切関係ありません。
+  <br>※このサービスはmiHoYo/HoYoverse非公式であり、miHoYo / HoYoverseとは一切関係ありません。
   <br>miHoYo / HoYoverseのサービスとは異なるものですのでご注意ください。
   """
   st.write(content,unsafe_allow_html=True)
