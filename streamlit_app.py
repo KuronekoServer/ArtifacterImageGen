@@ -47,7 +47,7 @@ async def main():
   except:
     pass
   content = """
-  # Web版 Artifacter
+  # 【公式】Web版 Artifacter
   [![Twitter](https://img.shields.io/badge/Artifacter-%40ArtifacterBot-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/ArtifacterBot)
   [![Twitter](https://img.shields.io/badge/開発-%40__0kq__-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/_0kq_)
   [![Twitter](https://img.shields.io/badge/運営・変更-%40kuroneko_server-1DA1F2?logo=twitter&style=flat-square)](https://twitter.com/kuroneko_server)
@@ -57,6 +57,8 @@ async def main():
   <br>![moe-counter](https://moe-counter.glitch.me/get/@kuroneko6423-artifacter-web?theme=rule34)
   ##### 原神のUIDからビルドカードを生成できます  
   ※バグ報告は[Discord](https://discord.com/invite/Y6w5Jv3EAR)からお願いします
+  ※このサービスはmiHoYo/HoYoverse非公式であり、miHoYo / HoYoverseとは一切関係ありません。
+  <br>miHoYo / HoYoverseのサービスとは異なるものですのでご注意ください。
   """
   st.write(content,unsafe_allow_html=True)
   UID = st.text_input("UIDを入力",value=queryUID if queryUID else "")
