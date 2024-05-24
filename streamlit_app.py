@@ -54,7 +54,7 @@ async def main():
   [![Discord](https://img.shields.io/discord/867038364552396860?logo=Discord&label=Discord&style=flat-square)](https://discord.com/invite/Y6w5Jv3EAR)
   [![Donation](https://img.shields.io/badge/%E9%81%8B%E5%96%B6%E6%94%AF%E6%8F%B4-Donation-green?style=flat-square)](https://kuroneko6423.com/donation)
   
-  <br>![moe-counter](https://moe-counter.glitch.me/get/@kuroneko6423-artifacter-web?theme=rule34)
+  <br>![moe-counter](https://moe-counter.kuroneko6423.com/get/@artifacter-hsr?theme=moebooru)
   ##### 原神のUIDからビルドカードを生成できます  
   ※バグ報告は[Discord](https://discord.com/invite/Y6w5Jv3EAR)からお願いします
   <br>※このサービスはmiHoYo/HoYoverse非公式であり、miHoYo / HoYoverseとは一切関係ありません。
